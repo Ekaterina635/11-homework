@@ -14,18 +14,22 @@ if (person.age > 18) {
 // 2 задание
 // Представьте, что вы работаете в команде, и вам нужно сделать код понятным для всех участников.
 // Перепишите следующий код, используя понятные и логичные имена переменных и функций:
-function Multiply(a, b) {
+function multiply(a, b) {
   let result = a * b;
   return result;
 }
-let numbers = Multiply(5, 10);
+let numbers = multiply(5, 10);
 
 // 3 задание
 // Убедитесь, что в коде используется единый стиль оформления. В следующем коде присутствуют смешанные стили кавычек,
 // разное использование var, let, и const, а также различное форматирование объектов и массивов. Исправьте код:
-const items = ["apple", 'banana', "orange"];
-const price = [ 1, 2, 3];
-const total = price["apple"] + price["banana"] + price["orange"];
+const items = ['apple', 'banana', 'orange'];
+const price = [ 
+  { name: 'apple', price: 1 },
+  { name: 'banana', price: 2 },
+  { name: 'orange', price: 3 }
+  ];
+const total = price[0].price + price[1].price + price[2].price;
 
 function calculateTotal(items) {
   return items.reduce(function (total, item) { 
@@ -39,10 +43,12 @@ function calculateTotal(items) {
 // функция должна возвращать сообщение "Форма успешно отправлена".
 const firstName = 'Anna';
 const email = 'anna@gmail.com';
-const password = 12345678;
+const password = '12345678';
 const userForm = [firstName, email, password];
 
 function validateForm(userForm) {
+  const [name, email, password] = userForm;
+    
     if (!firstName) {
         console.log('Имя не введено');
         return;
